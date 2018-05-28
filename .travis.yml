@@ -11,7 +11,7 @@ matrix:
       addons: &gcc7
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-7', 'gcc-7','libgmp-dev', 'flex', 'byacc', 'libfl-dev','libxml++2.6-2']
+          packages: ['g++-7', 'gcc-7','libgmp-dev', 'flex', 'byacc', 'libfl-dev','libxml++2.6-2', 'lp-solve']
       env: GCCVER='7' CXX_COMPILER='g++-7' C_COMPILER='gcc-7'
 
     # 4/ OSX GCC Builds
@@ -26,7 +26,7 @@ before_script:
   - export CXX=${CXX_COMPILER}
   - export CC=${C_COMPILER}
  #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rm /usr/local/include/c++         ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install gmp boost flex byacc ant graphviz libxml++ autoconf automake libtool ; fi  
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install gmp boost flex byacc ant graphviz libxml++ autoconf automake libtool lp-solve ; fi  
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export TARGETBRANCH=osx ; fi
   # linux only
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export AR=gcc-ar-${GCCVER} ; fi
