@@ -9,19 +9,20 @@ then
 	mkdir usr
 	cd usr
 	mkdir local
-	cd local
-	export IDIR=$(pwd)
-	cd ../..
+	cd ..
 fi
+
+export IDIR=$(pwd)/usr/local/
 
 
 if [ ! -d GreatSPN ]; 
 then
-	mkdir GreatSPN
-	cd GreatSPN
+	mkdir GreatSPN	
 fi
 
-if [ ! -f usr/local/include/meddly.h ];
+cd GreatSPN
+
+if [ ! -f $IDIR/include/meddly.h ];
 then
 	git clone --depth 1 https://github.com/asminer/meddly.git --branch master --single-branch meddly
 	cd meddly
@@ -32,10 +33,12 @@ then
 fi
 
 
-
 git clone --depth 1 https://github.com/GreatSPN/SOURCES.git --branch master --single-branch SOURCES/
 cd SOURCES
 cp -f ../../patches/Makefile .
+export CFLAGS="-o2 -Wall -I$IDIR/include"
+export CPPFLAGS="-o2 -Wall -I$IDIR/include"
+export LDFLAGS="-o2 -L$IDIR/lib"
 make
 
 
