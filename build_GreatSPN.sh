@@ -32,6 +32,16 @@ then
 	cd ..
 fi
 
+if [ ! -f $IDIR/lib/libgmp.a ];
+then
+	wget --progress=dot:mega https://gmplib.org/download/gmp/gmp-6.1.2.tar.bz2 ; 
+	tar xjf gmp-6.1.2.tar.bz2 ; 
+	cd gmp-6.1.2 ; 
+	./configure --enable-cxx --prefix=$IDIR ; 
+	make -j ; make install ; 
+	cd .. ;     
+fi
+
 if [ ! -f $IDIR/include/lp_lib.h ];
 then
 	tar xzf ../lp_solve_5.5.2.5_source.tar.gz 
