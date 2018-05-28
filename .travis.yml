@@ -24,9 +24,10 @@ before_script:
 ## OSX
   - cd ${TRAVIS_BUILD_DIR} 
   - export CXX=${CXX_COMPILER}
+  - export CPP=${CXX_COMPILER}
   - export CC=${C_COMPILER}
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rm /usr/local/include/c++         ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install gcc ; fi  
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install gmp boost flex byacc ant graphviz libxml++ autoconf automake libtool lp_solve gcc ; fi  
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export TARGETBRANCH=osx ; fi
   # linux only
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export AR=gcc-ar-${GCCVER} ; fi
@@ -38,8 +39,12 @@ before_script:
 script :
   - ./tag.sh
   - ./build_GreatSPN.sh
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then mv website/louvain_linux.tar.gz website/louvain_osx.tar.gz ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then mv website/greatspn_linux.tar.gz website/greatspn_osx.tar.gz ; fi
   - ls -lah website/
+
+cache:
+  directories:
+    - '${TRAVIS_BUILD_DIR}/usr/'
 
 deploy:
   provider: pages
