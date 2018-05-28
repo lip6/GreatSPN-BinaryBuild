@@ -4,7 +4,7 @@
 
 ### Global Makefile variables ###
 CC := $(CC) -c
-CPP := $(CPP) -c 
+CPP := $(CXX) -c 
 LD := $(CC)
 LDPP := $(CPP)
 RM := rm -f
