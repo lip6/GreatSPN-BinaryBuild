@@ -4,7 +4,7 @@ build:
 clone_depth: 30
 
 build_script :
- - '%BASH_PATH% -lc "cd $APPVEYOR_BUILD_FOLDER; ./build_louvain.sh && mv website/louvain_linux.tar.gz website/louvain_windows.tar.gz"'
+ - '%BASH_PATH% -lc "cd $APPVEYOR_BUILD_FOLDER; ./build_greatspn.sh && mv website/greatspn_linux.tar.gz website/greatspn_windows.tar.gz"'
  - DIR
 
  
@@ -14,11 +14,8 @@ environment :
 
  
 artifacts:
-  - path: website/louvain_windows.tar.gz
-    name: louvain_windows.tar.gz
-  - path: website/louvain.exe
-    name: louvain.exe
-  - path: website/convert.exe
-    name: convert.exe
+  - path: website/greatspn_windows.tar.gz
+    name: greatspn_windows.tar.gz
+
 
       
