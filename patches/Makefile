@@ -165,11 +165,17 @@ endif
 LP_SOLVE_LIB_1 := /usr/include/lpsolve/lp_lib.h
 LP_SOLVE_LIB_2 := /usr/local/include/lp_lib.h
 LP_SOLVE_LIB_3 := /usr/local/include/lpsolve/lp_lib.h
+LP_SOLVE_LIB_4 := $(IDIR)/include/lpsolve/lp_lib.h
 ifeq ($(wildcard $(LP_SOLVE_LIB_1)),)
   ifeq ($(wildcard $(LP_SOLVE_LIB_2)),)
     ifeq ($(wildcard $(LP_SOLVE_LIB_3)),)
-      $(warning "The lp-solve package is not installed. Some packages will not be compiled.")
-    else
+    	ifeq ($(wildcard $(LP_SOLVE_LIB_4)),)
+      		$(warning "The lp-solve package is not installed. Some packages will not be compiled.")
+    	else
+      	  HAS_LP_SOLVE_LIB := 1
+    	  LINK_LP_SOLVE_LIB := -L$(IDIR)/lib -llpsolve55
+	      INCLUDE_LP_SOLVE_LIB := -DHAS_LP_SOLVE_LIB=1 -I$(IDIR)/include/lpsolve/
+	    endif
       HAS_LP_SOLVE_LIB := 1
       LINK_LP_SOLVE_LIB := -L/usr/local/lib -llpsolve55
       INCLUDE_LP_SOLVE_LIB := -DHAS_LP_SOLVE_LIB=1 -I/usr/local/include/lpsolve/
