@@ -27,7 +27,7 @@ before_script:
   - export CPP=${CXX_COMPILER}
   - export CC=${C_COMPILER}
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rm /usr/local/include/c++         ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install gmp boost flex byacc ant graphviz libxml++ autoconf automake libtool lp_solve gcc ; fi  
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install gmp boost flex byacc ant graphviz libxml++ autoconf automake libtool gcc ; fi  
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export TARGETBRANCH=osx ; fi
   # linux only
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export AR=gcc-ar-${GCCVER} ; fi
