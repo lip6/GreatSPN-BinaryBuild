@@ -1077,6 +1077,297 @@ pnml2netdef_SOURCEFILE := WN/UTIL/pnml2netdef
 
 
 
+
+
+
+
+
+
+# libgspnSSP.a_SOURCES := WN/SOURCE/SPOT/PROPS/TRANS.tab.c NO GET THE RIGHT yacc/lex files\
+# 						WN/SOURCE/SPOT/PROPS/TRANS.c \
+# 						WN/SOURCE/SPOT/PROPS/PROPG.tab.c \
+# 						WN/SOURCE/SPOT/PROPS/PROPL.c \
+# 						WN/SOURCE/SPOT/PROPS/FSymFmTokens2.c \
+# 						WN/SOURCE/SPOT/PROPS/MultiSetOp.c \
+# 						WN/SOURCE/SPOT/PROPS/STATIC_CONF.c \
+# 						WN/SOURCE/SPOT/PROPS/GroupMark.c \
+# 						WN/SOURCE/SPOT/PROPS/INCLUSION.c \
+# 						WN/SOURCE/SPOT/PROPS/cache.c \
+# 						WN/SOURCE/SHARED/main.c \
+# 						WN/SOURCE/SHARED/service.c \
+# 						WN/SOURCE/SHARED/token.c \
+# 						WN/SOURCE/SHARED/dimensio.c \
+# 						WN/SOURCE/SHARED/errors.c \
+# 						WN/SOLVE/compact.c \
+# 						WN/SOURCE/SHARED/common.c \
+# 						WN/SOURCE/SHARED/enabling.c \
+# 						WN/SOURCE/SHARED/fire.c \
+# 						WN/SOURCE/SHARED/split.c \
+# 						WN/SOURCE/SHARED/group.c \
+# 						WN/SOURCE/SHARED/shared1.c \
+# 						WN/SOURCE/SHARED/shared2.c \
+# 						WN/SOURCE/SHARED/outdom.c \
+# 						WN/SOURCE/SHARED/report.c \
+# 						WN/SOURCE/SHARED/precheck.c \
+# 						WN/SOURCE/SHARED/flush.c \
+# 						WN/SOURCE/SHARED/degree.c \
+# 						WN/SOURCE/REACHAB/graph_se.c \
+# 						WN/SOURCE/REACHAB/canonic.c \
+# 						WN/SOURCE/REACHAB/schemes.c \
+# 						WN/SOURCE/REACHAB/dsrg_graph.c \
+# 						WN/SOURCE/REACHAB/stack.c \
+# 						WN/SOURCE/REACHAB/convert.c \
+# 						WN/SOURCE/REACHAB/rg_files.c \
+# 						WN/SOURCE/REACHAB/rgengwn.c \
+# 						WN/SOURCE/READNET/read_arc.c \
+# 						WN/SOURCE/READNET/read_t_c.c \
+# 						WN/SOURCE/READNET/read_NET.c \
+# 						WN/SOURCE/READNET/read_DEF.c \
+# 						WN/SOURCE/READNET/read_t_s.c \
+# 						WN/SOURCE/READNET/wn_yac.c \
+# 						WN/SOURCE/REACHAB/E_SRG/AFTER_FIRING_CASES.c \
+# 						WN/SOURCE/REACHAB/E_SRG/GET_SYM.c \
+# 						WN/SOURCE/REACHAB/E_SRG/MAPP_FOR_GROUPING.c \
+# 						WN/SOURCE/REACHAB/E_SRG/MAPP_FOR_DECOMPOSING.c \
+# 						WN/SOURCE/REACHAB/E_SRG/GROUP_STATICS.c \
+# 						WN/SOURCE/REACHAB/E_SRG/STATIC_LIST.c \
+# 						WN/SOURCE/REACHAB/E_SRG/MY_ALLOCATION.c \
+# 						WN/SOURCE/REACHAB/E_SRG/GET_FIRST_EVENT.c \
+# 						WN/SOURCE/REACHAB/E_SRG/INST_SYM_EVENT.c \
+# 						WN/SOURCE/REACHAB/E_SRG/EVENTUALITIES.c \
+# 						WN/SOURCE/REACHAB/E_SRG/READ_WRITE.c \
+# 						WN/SOURCE/REACHAB/E_SRG/SAVE.c \
+# 						WN/TRANSL/wn_grammar.y \
+# 						WN/TRANSL/wn.l
+
+# libgspnSSP.a_LD := ar r
+# #libgspnSSP.a_LDFLAGS := $(LDFLAGS) $(FLEX-LIB)
+# libgspnSSP.a_CFLAGS := $(call generate_WN_FLAGS,TOOL_LIBGSPNSSP,libgspnSSP.a) \
+# 					   $(FLEX-INCLUDE) $(GLIB-INCLUDE)
+
+#LIBRARIES += libgspnSSP.a
+
+
+
+libgspnRG.a_CFLAGS := $(call generate_WN_FLAGS,TOOL_LIBGSPNRG,libgspnRG.a) \
+					  $(FLEX-INCLUDE) 
+libgspnRG.a_SOURCES := WN/SOURCE/SPOT/properties.c \
+					   WN/SOURCE/SHARED/main.c \
+					   WN/SOURCE/SHARED/service.c \
+					   WN/SOURCE/SHARED/token.c \
+					   WN/SOURCE/SHARED/dimensio.c \
+					   WN/SOURCE/SHARED/errors.c \
+					   WN/SOLVE/compact.c \
+					   WN/SOURCE/SHARED/common.c \
+					   WN/SOURCE/SHARED/enabling.c	\
+					   WN/SOURCE/SHARED/fire.c \
+					   WN/SOURCE/SHARED/shared1.c \
+					   WN/SOURCE/SHARED/shared2.c \
+					   WN/SOURCE/SHARED/outdom.c \
+					   WN/SOURCE/SHARED/report.c \
+					   WN/SOURCE/SHARED/precheck.c \
+					   WN/SOURCE/SHARED/flush.c \
+					   WN/SOURCE/SHARED/degree.c \
+					   WN/SOURCE/REACHAB/graph_se.c \
+					   WN/SOURCE/REACHAB/graph.c \
+					   WN/SOURCE/REACHAB/stack.c \
+					   WN/SOURCE/REACHAB/convert.c \
+					   WN/SOURCE/REACHAB/rg_files.c \
+					   WN/SOURCE/REACHAB/rgengwn.c \
+					   WN/SOURCE/READNET/read_arc.c \
+					   WN/SOURCE/READNET/read_t_c.c \
+					   WN/SOURCE/READNET/read_DEF.c \
+					   WN/SOURCE/READNET/read_NET.c \
+					   WN/SOURCE/READNET/read_t_s.c \
+					   WN/SOURCE/READNET/wn_yac.c \
+					   WN/TRANSL/wn_grammar.y \
+					   WN/TRANSL/wn.l
+LIBRARIES += libgspnRG.a
+
+
+libgspnSRG.a_CFLAGS := $(call generate_WN_FLAGS,TOOL_LIBGSPNSRG,libgspnSRG.a) \
+					   $(FLEX-INCLUDE) 
+libgspnSRG.a_SOURCES := WN/SOURCE/SPOT/properties.c \
+						WN/SOURCE/SHARED/main.c \
+						WN/SOURCE/SHARED/service.c \
+						WN/SOURCE/SHARED/token.c \
+						WN/SOURCE/SHARED/dimensio.c \
+						WN/SOURCE/SHARED/errors.c \
+						WN/SOURCE/SHARED/ealloc.c \
+						WN/SOLVE/compact.c \
+						WN/SOURCE/SHARED/common.c \
+						WN/SOURCE/SHARED/enabling.c	\
+						WN/SOURCE/SHARED/fire.c \
+						WN/SOURCE/SHARED/split.c \
+						WN/SOURCE/SHARED/group.c \
+						WN/SOURCE/SHARED/shared1.c \
+						WN/SOURCE/SHARED/shared2.c \
+						WN/SOURCE/SHARED/outdom.c \
+						WN/SOURCE/SHARED/report.c \
+						WN/SOURCE/SHARED/precheck.c \
+						WN/SOURCE/SHARED/flush.c \
+						WN/SOURCE/SHARED/degree.c \
+						WN/SOURCE/REACHAB/graph_se.c \
+						WN/SOURCE/REACHAB/canonic.c \
+						WN/SOURCE/REACHAB/schemes.c \
+						WN/SOURCE/REACHAB/graph.c \
+						WN/SOURCE/REACHAB/stack.c \
+						WN/SOURCE/REACHAB/convert.c \
+						WN/SOURCE/REACHAB/rg_files.c \
+						WN/SOURCE/REACHAB/rgengwn.c \
+						WN/SOURCE/READNET/read_arc.c \
+						WN/SOURCE/READNET/read_t_c.c \
+						WN/SOURCE/READNET/read_NET.c \
+						WN/SOURCE/READNET/read_DEF.c \
+						WN/SOURCE/READNET/read_t_s.c \
+						WN/SOURCE/READNET/wn_yac.c \
+						WN/TRANSL/wn_grammar.y \
+						WN/TRANSL/wn.l
+LIBRARIES += libgspnSRG.a
+
+
+
+libgspnMCESRG.a_CFLAGS := $(call generate_WN_FLAGS,TOOL_LIBGSPNMCESRG,libgspnMCESRG.a) \
+					      $(FLEX-INCLUDE) 
+libgspnMCESRG.a_SOURCES := WN/SOURCE/SHARED/main.c \
+						   WN/SOURCE/SHARED/ealloc.c \
+						   WN/SOURCE/SHARED/service.c \
+						   WN/SOURCE/SHARED/token.c \
+						   WN/SOURCE/SHARED/dimensio.c \
+						   WN/SOURCE/SHARED/errors.c \
+						   WN/SOLVE/compact.c \
+						   WN/SOURCE/SHARED/common.c \
+						   WN/SOURCE/SHARED/enabling.c	\
+						   WN/SOURCE/SHARED/fire.c \
+						   WN/SOURCE/SHARED/split.c \
+						   WN/SOURCE/SHARED/group.c \
+						   WN/SOURCE/SHARED/shared1.c \
+						   WN/SOURCE/SHARED/shared2.c \
+						   WN/SOURCE/SHARED/outdom.c \
+						   WN/SOURCE/SHARED/report.c \
+						   WN/SOURCE/SHARED/precheck.c \
+						   WN/SOURCE/SHARED/flush.c \
+						   WN/SOURCE/SHARED/degree.c \
+						   WN/SOURCE/REACHAB/esrg_graph.c \
+						   WN/SOURCE/REACHAB/canonic.c \
+						   WN/SOURCE/REACHAB/convert.c \
+						   WN/SOURCE/REACHAB/schemes.c \
+						   WN/SOURCE/REACHAB/stack.c \
+						   WN/SOURCE/REACHAB/rg_files.c \
+						   WN/SOURCE/REACHAB/rgengwn.c \
+						   WN/SOURCE/REACHAB/graph_se.c \
+						   WN/SOURCE/READNET/read_arc.c \
+						   WN/SOURCE/READNET/read_t_c.c \
+						   WN/SOURCE/READNET/read_NET.c \
+						   WN/SOURCE/READNET/read_DEF.c \
+						   WN/SOURCE/READNET/read_t_s.c \
+						   WN/SOURCE/READNET/wn_yac.c \
+						   WN/SOURCE/REACHAB/E_SRG/AFTER_FIRING_CASES.c \
+						   WN/SOURCE/REACHAB/E_SRG/GET_SYM.c \
+						   WN/SOURCE/REACHAB/E_SRG/MAPP_FOR_GROUPING.c \
+						   WN/SOURCE/REACHAB/E_SRG/MAPP_FOR_DECOMPOSING.c \
+						   WN/SOURCE/REACHAB/E_SRG/GROUP_STATICS.c \
+						   WN/SOURCE/REACHAB/E_SRG/STATIC_LIST.c \
+						   WN/SOURCE/REACHAB/E_SRG/MY_ALLOCATION.c \
+						   WN/SOURCE/REACHAB/E_SRG/GET_FIRST_EVENT.c \
+						   WN/SOURCE/REACHAB/E_SRG/INST_SYM_EVENT.c \
+						   WN/SOURCE/REACHAB/E_SRG/EVENTUALITIES.c \
+						   WN/SOURCE/REACHAB/E_SRG/READ_WRITE.c \
+						   WN/SOURCE/REACHAB/E_SRG/SAVE.c \
+						   WN/TRANSL/wn_grammar.y \
+						   WN/TRANSL/wn.l
+LIBRARIES += libgspnMCESRG.a
+
+
+
+
+libgspnMCDSRG.a_CFLAGS := $(call generate_WN_FLAGS,TOOL_LIBGSPNMCDSRG,libgspnMCDSRG.a) \
+						  $(FLEX-INCLUDE) $(GLIB-INCLUDE)
+libgspnMCDSRG.a_SOURCES := WN/SOURCE/SPOT/PROPS/TRANS.y \
+						   WN/SOURCE/SPOT/PROPS/TRANS.l \
+						   WN/SOURCE/SPOT/PROPS/PROPG.y \
+						   WN/SOURCE/SPOT/PROPS/PROPL.l \
+						   WN/SOURCE/SPOT/PROPS/FSymFmTokens2.c \
+						   WN/SOURCE/SPOT/PROPS/MultiSetOp.c \
+						   WN/SOURCE/SPOT/PROPS/STATIC_CONF.c \
+						   WN/SOURCE/SPOT/PROPS/GroupMark.c \
+						   WN/SOURCE/SPOT/PROPS/Vectors.c \
+						   WN/SOURCE/SPOT/PROPS/INCLUSION.c \
+						   WN/SOURCE/SPOT/PROPS/cache.c \
+						   WN/SOURCE/SHARED/main.c \
+						   WN/SOURCE/SHARED/ealloc.c \
+						   WN/SOURCE/SHARED/service.c \
+						   WN/SOURCE/SHARED/token.c \
+						   WN/SOURCE/SHARED/dimensio.c \
+						   WN/SOURCE/SHARED/errors.c \
+						   WN/SOLVE/compact.c \
+						   WN/SOURCE/SHARED/common.c \
+						   WN/SOURCE/SHARED/enabling.c \
+						   WN/SOURCE/SHARED/fire.c \
+						   WN/SOURCE/SHARED/split.c \
+						   WN/SOURCE/SHARED/group.c \
+						   WN/SOURCE/SHARED/shared1.c \
+						   WN/SOURCE/SHARED/shared2.c \
+						   WN/SOURCE/SHARED/outdom.c \
+						   WN/SOURCE/SHARED/report.c \
+						   WN/SOURCE/SHARED/precheck.c \
+						   WN/SOURCE/SHARED/flush.c \
+						   WN/SOURCE/SHARED/degree.c \
+						   WN/SOURCE/REACHAB/graph_se.c \
+						   WN/SOURCE/REACHAB/canonic.c \
+						   WN/SOURCE/REACHAB/schemes.c \
+						   WN/SOURCE/REACHAB/dsrg_graph.c \
+						   WN/SOURCE/REACHAB/stack.c \
+						   WN/SOURCE/REACHAB/convert.c \
+						   WN/SOURCE/REACHAB/rg_files.c \
+						   WN/SOURCE/REACHAB/rgengwn.c \
+						   WN/SOURCE/READNET/read_arc.c \
+						   WN/SOURCE/READNET/read_t_c.c \
+						   WN/SOURCE/READNET/read_NET.c \
+						   WN/SOURCE/READNET/read_DEF.c \
+						   WN/SOURCE/READNET/read_t_s.c \
+						   WN/SOURCE/READNET/wn_yac.c \
+						   WN/SOURCE/REACHAB/E_SRG/GET_SYM.c \
+						   WN/SOURCE/REACHAB/E_SRG/MAPP_FOR_GROUPING.c \
+						   WN/SOURCE/REACHAB/E_SRG/MAPP_FOR_DECOMPOSING.c \
+						   WN/SOURCE/REACHAB/E_SRG/GROUP_STATICS.c \
+						   WN/SOURCE/REACHAB/E_SRG/STATIC_LIST.c \
+						   WN/SOURCE/REACHAB/E_SRG/MY_ALLOCATION.c \
+						   WN/SOURCE/REACHAB/E_SRG/GET_FIRST_EVENT.c \
+						   WN/SOURCE/REACHAB/E_SRG/INST_SYM_EVENT.c \
+						   WN/SOURCE/REACHAB/E_SRG/EVENTUALITIES.c \
+						   WN/SOURCE/REACHAB/E_SRG/READ_WRITE.c \
+						   WN/SOURCE/REACHAB/E_SRG/SAVE.c \
+						   WN/TRANSL/wn_grammar.y \
+						   WN/TRANSL/wn.l
+						   # WN/SOURCE/REACHAB/E_SRG/AFTER_FIRING_CASES.c
+
+# special flags for the lex/yacc files of this library
+libgspnMCDSRG.a_LEXFLAGS_WN/SOURCE/SPOT/PROPS/TRANS.l := $(LEXFLAGS) -PTrans
+libgspnMCDSRG.a_LEXFLAGS_WN/SOURCE/SPOT/PROPS/PROPL.l := $(LEXFLAGS) -PProp
+libgspnMCDSRG.a_YACCFLAGS_WN/SOURCE/SPOT/PROPS/TRANS.y := $(YACCFLAGS) -p Trans
+libgspnMCDSRG.a_YACCFLAGS_WN/SOURCE/SPOT/PROPS/PROPG.y := $(YACCFLAGS) -p Prop
+
+ifdef HAS_GLIB_LIB
+LIBRARIES += libgspnMCDSRG.a
+endif
+
+
+
+
+
+ESRG_CTMC_SOURCES := WN/SOURCE/RESRG/esrg1.cpp WN/SOURCE/RESRG/interface.cpp
+ESRG_CTMC_DEPENDS := $(LIBDIR)/libgspnMCESRG.a
+ESRG_CTMC_LD := $(LDPP)
+ESRG_CTMC_CPPFLAGS := $(CPPFLAGS) -I../../../INCLUDE -Wall \
+					  $(call generate_WN_FLAGS,TOOL_ESRG_CTMC,ESRG_CTMC)
+ESRG_CTMC_LDFLAGS := -L$(LIBDIR) -lgspnMCESRG -lm $(FLEX-LIB)
+
+TARGETS += ESRG_CTMC
+
+
+
+
 MDP_includes := $(CPPFLAGS) `pkg-config --cflags glib-2.0 libxml++-2.6 glibmm-2.4` \
 				$(call generate_WN_FLAGS,TOOL_MDP,MDP) \
 				-I/usr/local/include/graphMDP -I/usr/include/glpk/ $(FLEX-INCLUDE) \
