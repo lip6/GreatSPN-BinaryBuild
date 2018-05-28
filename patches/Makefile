@@ -1076,17 +1076,6 @@ ord_rgMEDD_SOURCEFILE := WN/UTIL/ord_rgMEDD.sh
 pnml2netdef_SOURCEFILE := WN/UTIL/pnml2netdef
 
 
-ESRG_CTMC_SOURCES := WN/SOURCE/RESRG/esrg1.cpp WN/SOURCE/RESRG/interface.cpp
-ESRG_CTMC_DEPENDS := $(LIBDIR)/libgspnMCESRG.a
-ESRG_CTMC_LD := $(LDPP)
-ESRG_CTMC_CPPFLAGS := $(CPPFLAGS) -I../../../INCLUDE -Wall \
-					  $(call generate_WN_FLAGS,TOOL_ESRG_CTMC,ESRG_CTMC)
-ESRG_CTMC_LDFLAGS := -L$(LIBDIR) -lgspnMCESRG -lm $(FLEX-LIB)
-
-TARGETS += ESRG_CTMC
-
-
-
 
 MDP_includes := $(CPPFLAGS) `pkg-config --cflags glib-2.0 libxml++-2.6 glibmm-2.4` \
 				$(call generate_WN_FLAGS,TOOL_MDP,MDP) \
