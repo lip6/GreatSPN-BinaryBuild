@@ -36,8 +36,8 @@ fi
 git clone --depth 1 https://github.com/GreatSPN/SOURCES.git --branch master --single-branch SOURCES/
 cd SOURCES
 cp -f ../../patches/Makefile .
-export CFLAGS="-O2 -Wall -I$IDIR/include"
-export CPPFLAGS="-O2 -Wall -I$IDIR/include"
+export CFLAGS="-O2 -Wall -Wno-unused-variables -I$IDIR/include"
+export CPPFLAGS="-O2 -Wall -Wno-unused-variables -I$IDIR/include"
 export LDFLAGS="-O2 -L$IDIR/lib"
 make
 
