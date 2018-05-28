@@ -11,7 +11,7 @@ matrix:
       addons: &gcc7
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-7', 'gcc-7','libgmp-dev', 'flex', 'byacc', 'libfl-dev']
+          packages: ['g++-7', 'gcc-7','libgmp-dev', 'flex', 'byacc', 'libfl-dev','libxml++2.6-2']
       env: GCCVER='7' CXX_COMPILER='g++-7' C_COMPILER='gcc-7'
 
     # 4/ OSX GCC Builds
