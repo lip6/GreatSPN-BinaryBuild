@@ -32,14 +32,14 @@ then
 	cd ..
 fi
 
-if [ ! -d $IDIR/include/lpsolve ];
+if [ ! -f $IDIR/include/lp_lib.h ];
 then
 	tar xzf ../lp_solve_5.5.2.5_source.tar.gz 
 	cd lp_solve_5.5/lpsolve55
 	sh ccc
 	mkdir -p $IDIR/bin ; cp bin/ux64/liblpsolve55.* $IDIR/bin/	
 	cd ..
-	mkdir -p $IDIR/include/lpsolve ; cp *.h $IDIR/include/lpsolve/	
+	mkdir -p $IDIR/include/ ; cp *.h $IDIR/include/	
 	cd ..
 fi
 

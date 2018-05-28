@@ -165,7 +165,7 @@ endif
 LP_SOLVE_LIB_1 := /usr/include/lpsolve/lp_lib.h
 LP_SOLVE_LIB_2 := /usr/local/include/lp_lib.h
 LP_SOLVE_LIB_3 := /usr/local/include/lpsolve/lp_lib.h
-LP_SOLVE_LIB_4 := $(IDIR)/include/lpsolve/lp_lib.h
+LP_SOLVE_LIB_4 := $(IDIR)/include/lp_lib.h
 ifeq ($(wildcard $(LP_SOLVE_LIB_1)),)
   ifeq ($(wildcard $(LP_SOLVE_LIB_2)),)
     ifeq ($(wildcard $(LP_SOLVE_LIB_3)),)
@@ -174,7 +174,7 @@ ifeq ($(wildcard $(LP_SOLVE_LIB_1)),)
     	else
       	  HAS_LP_SOLVE_LIB := 1
     	  LINK_LP_SOLVE_LIB := -L$(IDIR)/lib -llpsolve55
-	      INCLUDE_LP_SOLVE_LIB := -DHAS_LP_SOLVE_LIB=1 -I$(IDIR)/include/lpsolve/
+	      INCLUDE_LP_SOLVE_LIB := -DHAS_LP_SOLVE_LIB=1 -I$(IDIR)/include/
 	    endif
       HAS_LP_SOLVE_LIB := 1
       LINK_LP_SOLVE_LIB := -L/usr/local/lib -llpsolve55
