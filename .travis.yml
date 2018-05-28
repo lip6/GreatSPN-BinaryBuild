@@ -24,7 +24,6 @@ before_script:
 ## OSX
   - cd ${TRAVIS_BUILD_DIR} 
   - export CXX=${CXX_COMPILER}
-  - export CPP=${CXX_COMPILER}
   - export CC=${C_COMPILER}
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rm /usr/local/include/c++         ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install gmp boost flex byacc ant graphviz libxml++ autoconf automake libtool gcc ; fi  
