@@ -744,7 +744,7 @@ WNESRG_SOURCES := WN/SOURCE/SHARED/service.c \
 
 RGMEDD_CFLAGS := $(call generate_WN_FLAGS,TOOL_RGMEDD,RGMEDD) \
 				 $(FLEX-INCLUDE) 
-RGMEDD_CPPFLAGS := $(RGMEDD_CFLAGS) -I/usr/local/include
+RGMEDD_CPPFLAGS := $(CPPFLAGS) $(RGMEDD_CFLAGS) -I/usr/local/include
 RGMEDD_LDFLAGS := $(LDFLAGS) -L/usr/local/lib -lmeddly $(FLEX-LIB)
 RGMEDD_SOURCES := WN/SOURCE/SHARED/service.c \
 				  WN/SOURCE/SHARED/ealloc.c \
