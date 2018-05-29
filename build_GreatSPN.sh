@@ -47,7 +47,7 @@ then
 	tar xzf ../lp_solve_5.5.2.5_source.tar.gz 
 	cd lp_solve_5.5/lpsolve55
 	sh ccc
-	mkdir -p $IDIR/bin ; cp bin/ux64/liblpsolve55.* $IDIR/bin/	
+	mkdir -p $IDIR/lib ; cp bin/ux64/liblpsolve55.* $IDIR/lib/	
 	cd ..
 	mkdir -p $IDIR/include/ ; cp *.h $IDIR/include/	
 	cd ..
