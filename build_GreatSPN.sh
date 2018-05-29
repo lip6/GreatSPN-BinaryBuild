@@ -63,5 +63,12 @@ export LDFLAGS="-O2 -L$IDIR/lib"
 make
 
 
+for i in bin/* ; do strip -s $i ; done ;
+tar czf ../../website/greatspn_linux.tar.gz bin/
+
+ls -lah ../../website
+
+cd ../..
+ 
 
 
