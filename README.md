@@ -14,4 +14,8 @@ This project uses the latest code from the GreatSPN repository.
 
 Authors (as credited on GreatSPN homepage) :  G. Chiola, R. Gaeta, A. Horvath, M. De Pierro, M. Beccuti, S. Baarir, D. Cerotti, Elvio Amparore, et al.
 
+It also uses the latest code for [Meddly](https://github.com/asminer/meddly) by Andrew S. Miner et al.
+
+We also package versions of [lpsolve 5.5.2.5](https://sourceforge.net/projects/lpsolve/).
+
 Packaging : Yann Thierry-Mieg 
