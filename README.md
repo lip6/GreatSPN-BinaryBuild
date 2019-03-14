@@ -18,4 +18,4 @@ It also uses the latest code for [Meddly](https://github.com/asminer/meddly) by 
 
 We also package versions of [lpsolve 5.5.2.5](https://sourceforge.net/projects/lpsolve/).
 
-Packaging : Yann Thierry-Mieg 
+Packaging : Yann Thierry-Mieg
