@@ -57,25 +57,25 @@ if [ ! -f $IDIR/bin/byacc ];
 then
     wget --progress=dot:mega https://invisible-island.net/datafiles/release/byacc.tar.gz
     tar xzf byacc.tar.gz
+    rm -f byacc.tar.gz
     cd byacc*
     ./configure --prefix=$IDIR
     make
     make install
     cp $IDIR/bin/yacc $IDIR/bin/byacc
     cd ..
-    rm -f byacc.tar.gz
 fi
 
 if [ ! -f $IDIR/bin/flex ];
 then
     wget --progress=dot:mega https://github.com/westes/flex/files/981163/flex-2.6.4.tar.gz
     tar xzf flex*.tar.gz
+    rm -f flex*.tar.gz
     cd flex*
     ./configure --prefix=$IDIR
     make
     make install
     cd ..
-    rm -f flex*.tar.gz
 fi
 
 
