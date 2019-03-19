@@ -34,7 +34,7 @@ fi
 
 if [ ! -f $IDIR/lib/libgmp.a ];
 then
-	wget --progress=dot:mega https://gmplib.org/download/gmp/gmp-6.1.2.tar.bz2 ; 
+	wget --progress=dot:mega ftp://ftp.gnu.org/gnu/gmp/gmp-6.1.2.tar.bz2 ; 
 	tar xjf gmp-6.1.2.tar.bz2 ; 
 	cd gmp-6.1.2 ; 
 	./configure --enable-cxx --prefix=$IDIR ; 
