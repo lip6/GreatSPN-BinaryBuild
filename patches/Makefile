@@ -36,7 +36,7 @@ ENABLE_Cxx14 ?= -std=c++14
 
 # External libraries
 FLEX-INCLUDE :=
-FLEX-LIB := -lfl
+FLEX-LIB := 
 
 GLIB-INCLUDE := $(shell pkg-config --silence-errors --cflags glib-2.0)
 GLIB-LIB := $(shell pkg-config --silence-errors --libs glib-2.0)
@@ -69,7 +69,7 @@ ifeq ($(UNAME_S),Darwin)
    MOTIF-INCLUDE := -I/usr/OpenMotif/include
    MOTIF-LIB := -L/usr/OpenMotif/lib
    UIL := /usr/OpenMotif/bin/uil
-   FLEX-LIB := -lfl -L/usr/local/opt/flex/lib
+   FLEX-LIB := 
    OPENGL-LIB := -lgl -lglu -lglut
    CC := gcc -g -c -std=c99
    CPP := g++ -g -c -std=c++14 -Wno-unused-local-typedef
