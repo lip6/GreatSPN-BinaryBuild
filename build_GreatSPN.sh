@@ -22,16 +22,6 @@ fi
 
 cd GreatSPN
 
-if [ ! -f $IDIR/include/meddly.h ];
-then
-	git clone --depth 1 https://github.com/asminer/meddly.git --branch master --single-branch meddly
-	cd meddly
-	./autogen.sh
-	./configure --prefix=$IDIR  || cat config.log
-	make && make install
-	cd ..
-fi
-
 if [ ! -f $IDIR/lib/libgmp.a ];
 then
 	wget --progress=dot:mega ftp://ftp.gnu.org/gnu/gmp/gmp-6.1.2.tar.bz2 ; 
@@ -41,6 +31,17 @@ then
 	make -j ; make install ; 
 	cd .. ;     
 fi
+
+if [ ! -f $IDIR/include/meddly.h ];
+then
+	git clone --depth 1 https://github.com/yanntm/meddly.git --branch master --single-branch meddly
+	cd meddly
+	./autogen.sh
+	./configure --prefix=$IDIR  || cat config.log
+	make && make install
+	cd ..
+fi
+
 
 if [ ! -f $IDIR/include/lp_lib.h ];
 then
