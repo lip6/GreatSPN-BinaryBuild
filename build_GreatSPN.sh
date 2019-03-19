@@ -46,6 +46,7 @@ if [ ! -f $IDIR/include/lp_lib.h ];
 then
 	tar xzf ../lp_solve_5.5.2.5_source.tar.gz 
 	cd lp_solve_5.5/lpsolve55
+	autoreconf -vfi
 	sh ccc
 	mkdir -p $IDIR/lib ; cp bin/ux64/liblpsolve55.* $IDIR/lib/	
 	cd ..
