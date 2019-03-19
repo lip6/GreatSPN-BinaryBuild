@@ -66,7 +66,7 @@ then
     cd ..
 fi
 
-if [ ! -f $IDIR/bin/flex ];
+if [ ! -f $IDIR/include/FlexLexer.h ];
 then
     wget --progress=dot:mega https://github.com/westes/flex/files/981163/flex-2.6.4.tar.gz
     tar xzf flex*.tar.gz
