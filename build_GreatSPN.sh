@@ -89,7 +89,7 @@ export CFLAGS="-O2 -Wall -Wno-unused-variable -Wno-unused-function -I$IDIR/inclu
 export CPPFLAGS="-O2 -Wall -Wno-unused-variable -Wno-unused-function -I$IDIR/include"
 export LDFLAGS="-O2 -L$IDIR/lib"
 export BYACCDIR=$IDIR/bin/
-make --trace
+make -d
 
 for i in bin/* ; do strip -s $i ; done ;
 tar czf ../../website/greatspn_linux.tar.gz bin/
