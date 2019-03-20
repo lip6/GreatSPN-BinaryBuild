@@ -12,7 +12,7 @@ then
 	cd ..
 fi
 
-export IDIR=$(pwd)/usr/local/
+export IDIR=$(pwd)/usr/local
 export PATH=$IDIR/bin:$PATH
 
 
@@ -28,7 +28,7 @@ then
 	wget --progress=dot:mega ftp://ftp.gnu.org/gnu/gmp/gmp-6.1.2.tar.bz2 ; 
 	tar xjf gmp-6.1.2.tar.bz2 ; 
 	cd gmp-6.1.2 ; 
-	./configure --enable-cxx --prefix=$IDIR ; 
+	./configure --enable-cxx --prefix=$IDIR/ ; 
 	make -j ; make install ; 
 	cd .. ;     
 fi
@@ -38,7 +38,7 @@ then
 	git clone --depth 1 https://github.com/yanntm/meddly.git --branch master --single-branch meddly
 	cd meddly
 	./autogen.sh
-	./configure --prefix=$IDIR  || cat config.log
+	./configure --prefix=$IDIR/  || cat config.log
 	make && make install
 	cd ..
 fi
@@ -62,7 +62,7 @@ then
     tar xzf byacc.tar.gz
     rm -f byacc.tar.gz
     cd byacc*
-    ./configure --prefix=$IDIR
+    ./configure --prefix=$IDIR/
     make
     make install
     cp $IDIR/bin/yacc $IDIR/bin/byacc
@@ -76,7 +76,7 @@ then
     tar xzf flex*.tar.gz
     rm -f flex*.tar.gz
     cd flex*
-    ./configure --prefix=$IDIR
+    ./configure --prefix=$IDIR/
     make
     make install
     cd ..
@@ -89,6 +89,7 @@ cd SOURCES
 export CFLAGS="-O2 -Wall -Wno-unused-variable -Wno-unused-function -I$IDIR/include"
 export CPPFLAGS="-O2 -Wall -Wno-unused-variable -Wno-unused-function -I$IDIR/include"
 export LDFLAGS="-O2 -L$IDIR/lib"
+export BYACCDIR=$IDIR/bin/
 make --trace
 
 for i in bin/* ; do strip -s $i ; done ;
