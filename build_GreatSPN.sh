@@ -68,7 +68,6 @@ then
     cp $IDIR/bin/yacc $IDIR/bin/byacc
     cd ..
 fi
-byacc -v
 
 if [ ! -f $IDIR/include/FlexLexer.h ];
 then
