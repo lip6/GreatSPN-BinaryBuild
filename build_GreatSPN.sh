@@ -90,6 +90,7 @@ export CFLAGS="-O2 -Wall -Wno-unused-variable -Wno-unused-function -I$IDIR/inclu
 export CPPFLAGS="-O2 -Wall -Wno-unused-variable -Wno-unused-function -I$IDIR/include"
 export LDFLAGS="-O2 -L$IDIR/lib"
 export BYACCDIR=$IDIR/bin/
+echo "C compiler : $CC C++ compiler : $CXX"
 make 
 
 for i in bin/* ; do strip -s $i ; done ;
