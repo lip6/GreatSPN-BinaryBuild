@@ -93,6 +93,7 @@ cd objects
 find . -exec touch {} \;
 cd ..
 
+
 export CFLAGS="-O2 -Wall -Wno-unused-variable -Wno-unused-function -I$IDIR/include"
 export CPPFLAGS="-O2 -Wall -Wno-unused-variable -Wno-unused-function -I$IDIR/include"
 export LDFLAGS="-O2 -L$IDIR/lib"
@@ -106,8 +107,12 @@ cp -f Makefile2 Makefile
 fi
 make 
 
-if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then for i in bin/* ; do strip -s $i ; done ;  fi
-if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then for i in bin/* ; do strip -s $i ; done ;  fi
+if [ -d /Users ]; 
+then 
+	for i in bin/* ; do strip $i ; done ; 
+else 
+	for i in bin/* ; do strip -s $i ; done ;
+fi
 
 tar czf ../../website/greatspn_linux.tar.gz bin/
 
