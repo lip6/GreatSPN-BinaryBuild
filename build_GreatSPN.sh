@@ -91,6 +91,12 @@ export CPPFLAGS="-O2 -Wall -Wno-unused-variable -Wno-unused-function -I$IDIR/inc
 export LDFLAGS="-O2 -L$IDIR/lib"
 export BYACCDIR=$IDIR/bin/
 echo "C compiler : $CC C++ compiler : $CXX"
+# MinGW : add flags to link SIM branch : WNSIM, WNSYMB
+if [ -d /c/ ];
+then
+cat Makefile | sed 's/WNSIM_LDFLAGS:= -lm/WNSIM_LDFLAGS:= -lm -lws2_32/g' | sed 's/WNSYMB_LDFLAGS:= -lm/WNSYMB_LDFLAGS:= -lm -lws2_32/g' > Makefile2
+cp -f Makefile2 Makefile
+fi
 make 
 
 for i in bin/* ; do strip -s $i ; done ;
