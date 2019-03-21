@@ -101,7 +101,7 @@ echo "C compiler : $CC C++ compiler : $CXX"
 # MinGW : add flags to link SIM branch : WNSIM, WNSYMB
 if [ -d /c/ ];
 then
-cat Makefile | sed 's/WNSIM_LDFLAGS:= -lm/WNSIM_LDFLAGS:= -lm -lws2_32/g' | sed 's/WNSYMB_LDFLAGS:= -lm/WNSYMB_LDFLAGS:= -lm -lws2_32/g' > Makefile2
+cat Makefile | sed 's/WNSIM_LDFLAGS:= -lm/WNSIM_LDFLAGS:= -lm -lws2_32/g' | sed 's/GSPNSIM_LDFLAGS:= -lm/GSPNSIM_LDFLAGS:= -lm -lws2_32/g' > Makefile2
 cp -f Makefile2 Makefile
 fi
 make 
