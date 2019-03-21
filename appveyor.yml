@@ -5,6 +5,7 @@ clone_depth: 30
 
 build_script :
 - '%BASH_PATH% -lc "g++ --version"'
+- '%BASH_PATH% -lc "cd $APPVEYOR_BUILD_FOLDER ; mkdir -p usr/local ;"' 
 - '%BASH_PATH% -lc "cd $APPVEYOR_BUILD_FOLDER/usr/local ; (if [ ! -f usr/local/bin/flex.exe ]; then wget https://netcologne.dl.sourceforge.net/project/mingw/MSYS/Extension/flex/flex-2.5.35-2/flex-2.5.35-2-msys-1.0.13-bin.tar.lzma  && tar --lzma -x -f flex-2.5.35-2-msys-1.0.13-bin.tar.lzma && rm flex-2.5.35-2-msys-1.0.13-bin.tar.lzma ; fi ) && ls -R"'
 - '%BASH_PATH% -lc "cd $APPVEYOR_BUILD_FOLDER; ./build_greatspn.sh && mv website/greatspn_linux.tar.gz website/greatspn_windows.tar.gz"'
 - DIR
