@@ -49,7 +49,8 @@ then
 	tar xzf ../lp_solve_5.5.2.5_source.tar.gz 
 	cd lp_solve_5.5/lpsolve55
 	autoreconf -vfi
-	sh ccc
+	cat ccc | sed 's/c=cc/c=$CC/g' > ccc2
+	sh ccc2
 	mkdir -p $IDIR/lib ; cp bin/ux64/liblpsolve55.* $IDIR/lib/	
 	cd ..
 	mkdir -p $IDIR/include/ ; cp *.h $IDIR/include/	
