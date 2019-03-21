@@ -86,6 +86,13 @@ fi
 git clone --depth 1 https://github.com/yanntm/SOURCES.git --branch master --single-branch SOURCES/
 cd SOURCES
 # cp -f ../../patches/Makefile .
+
+# hack to avoid regenerating these files, touch order *is* important
+touch WN/TRANSL/*.y
+cd objects
+find . -exec touch {} \;
+cd ..
+
 export CFLAGS="-O2 -Wall -Wno-unused-variable -Wno-unused-function -I$IDIR/include"
 export CPPFLAGS="-O2 -Wall -Wno-unused-variable -Wno-unused-function -I$IDIR/include"
 export LDFLAGS="-O2 -L$IDIR/lib"
