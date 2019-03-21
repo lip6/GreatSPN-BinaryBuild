@@ -25,7 +25,7 @@ before_script:
   - cd ${TRAVIS_BUILD_DIR} 
   - export CXX=${CXX_COMPILER}
   - export CC=${C_COMPILER}
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rm /usr/local/include/c++         ; fi
+  # - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rm /usr/local/include/c++         ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install gcc ant graphviz libxml++ ; fi  
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export TARGETBRANCH=osx ; fi
   # linux only
