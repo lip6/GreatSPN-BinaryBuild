@@ -106,7 +106,9 @@ cp -f Makefile2 Makefile
 fi
 make 
 
-for i in bin/* ; do strip -s $i ; done ;
+if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then for i in bin/* ; do strip -s $i ; done ;  fi
+if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then for i in bin/* ; do strip -s $i ; done ;  fi
+
 tar czf ../../website/greatspn_linux.tar.gz bin/
 
 ls -lah ../../website
