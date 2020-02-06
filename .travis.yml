@@ -8,7 +8,7 @@ matrix:
       addons: &gcc9
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-9', 'gcc-9','libxml++2.6-2v5', 'boost1.55']
+          packages: ['g++-9', 'gcc-9','libxml++2.6-2v5', 'libboost-all-dev']
       env: GCCVER='9' CXX_COMPILER='g++-9' C_COMPILER='gcc-9'
 
     # 4/ OSX GCC Builds
@@ -41,6 +41,7 @@ before_script:
 
 # build
 script :
+  - aptitude search boost
   - ./tag.sh
   - ./build_GreatSPN.sh
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then mv website/greatspn_linux.tar.gz website/greatspn_osx.tar.gz ; fi
