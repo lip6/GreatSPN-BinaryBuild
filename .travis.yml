@@ -23,6 +23,7 @@ matrix:
             - ant
             - graphviz
             - libxml++
+            - gmp
       env: GCCVER='9' CXX_COMPILER='g++-9' C_COMPILER='gcc-9'
 
 before_script:
@@ -41,7 +42,6 @@ before_script:
 
 # build
 script :
-  - aptitude search boost
   - ./tag.sh
   - ./build_GreatSPN.sh
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then mv website/greatspn_linux.tar.gz website/greatspn_osx.tar.gz ; fi
