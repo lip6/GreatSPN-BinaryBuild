@@ -1,5 +1,4 @@
-language: jzvz
-jdk: oraclejdk9
+language: java
 
 matrix:
   include:
@@ -9,7 +8,7 @@ matrix:
       addons: &gcc9
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-9', 'gcc-9','libxml++2.6-2', 'boost1.55']
+          packages: ['g++-9', 'gcc-9','libxml++2.6-2v5', 'boost1.55']
       env: GCCVER='9' CXX_COMPILER='g++-9' C_COMPILER='gcc-9'
 
     # 4/ OSX GCC Builds
@@ -20,6 +19,10 @@ matrix:
         homebrew:
           packages:
             - gcc
+            - make
+            - ant
+            - graphviz
+            - libxml++
       env: GCCVER='9' CXX_COMPILER='g++-9' C_COMPILER='gcc-9'
 
 before_script:
@@ -28,7 +31,7 @@ before_script:
   - export CXX=${CXX_COMPILER}
   - export CC=${C_COMPILER}
   # - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rm /usr/local/include/c++         ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install gcc make ant graphviz libxml++ ; fi  
+  # - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install gcc make ant graphviz libxml++ ; fi  
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export TARGETBRANCH=osx ; fi
   # linux only
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export AR=gcc-ar-${GCCVER} ; fi
