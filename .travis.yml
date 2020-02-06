@@ -1,6 +1,4 @@
-dist: trusty
-sudo: false
-# language: cpp
+language: jzvz
 jdk: oraclejdk9
 
 matrix:
@@ -8,17 +6,21 @@ matrix:
    # Linux GCC Builds
     - os: linux
       compiler: gcc
-      addons: &gcc7
+      addons: &gcc9
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-7', 'gcc-7','libxml++2.6-2', 'boost1.55']
-      env: GCCVER='7' CXX_COMPILER='g++-7' C_COMPILER='gcc-7'
+          packages: ['g++-9', 'gcc-9','libxml++2.6-2', 'boost1.55']
+      env: GCCVER='9' CXX_COMPILER='g++-9' C_COMPILER='gcc-9'
 
     # 4/ OSX GCC Builds
     - os: osx
-      osx_image: xcode8.3
+      osx_image: xcode11.2
       compiler: gcc
-      env: GCCVER='8' CXX_COMPILER='g++-8' C_COMPILER='gcc-8'
+      addons:
+        homebrew:
+          packages:
+            - gcc
+      env: GCCVER='9' CXX_COMPILER='g++-9' C_COMPILER='gcc-9'
 
 before_script:
 ## OSX
