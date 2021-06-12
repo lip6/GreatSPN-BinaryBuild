@@ -35,7 +35,7 @@ fi
 
 if [ ! -f $IDIR/include/meddly.h ];
 then
-	git clone --depth 1 https://github.com/yanntm/meddly.git --branch master --single-branch meddly
+	git clone --depth 1 https://github.com/asminer/meddly.git --branch master --single-branch meddly
 	cd meddly
 	./autogen.sh
 	./configure --prefix=$IDIR/  || cat config.log
